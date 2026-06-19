@@ -68,54 +68,55 @@ Pontue mentalmente o prompt recebido nos 5 eixos abaixo (0–2 cada):
 - **Objetivo (0–2):** o propósito final está definido?
 - **Acionabilidade (0–2):** o modelo consegue agir imediatamente sem adivinhar?
 
-### 3. Aplique os 8 Pilares do Prompt de Elite
+### 3. Incorpore os 8 Pilares do Prompt de Elite
 
-Reescreva o prompt cobrindo **todos os pilares relevantes** ao domínio:
+Antes de produzir a resposta, cubra mentalmente **todos os pilares relevantes**
+ao domínio — eles guiam COMO você executa, não aparecem como texto na saída:
 
-1. **Persona:** atribua um papel claro, específico e relevante ao modelo.
-   ("Você é um arquiteto de software sênior com 15 anos de experiência em
-   sistemas distribuídos e microsserviços...")
-2. **Missão:** declare o objetivo de forma específica, mensurável e orientada
-   ao resultado — nunca genérica.
-3. **Contexto rico:** background, audiência-alvo, restrições, situação atual,
-   nível de conhecimento do usuário.
-4. **Passos explícitos:** quebre tarefas complexas em subtarefas numeradas;
-   instrua o modelo a seguir uma sequência definida.
-5. **Formato de saída:** estrutura exata (tabela, JSON, lista, markdown),
-   extensão esperada, linguagem, nível de detalhe.
-6. **Exemplos (few-shot):** quando útil, inclua 1–2 pares entrada→saída que
-   demonstrem o padrão desejado.
-7. **Restrições e negativos:** o que NÃO fazer, tom proibido, conteúdo a
-   excluir, limites de escopo.
-8. **Critérios de excelência:** como saber se a resposta está "perfeita"?
-   Defina o bar de qualidade explicitamente.
+1. **Persona:** assuma internamente o papel mais qualificado para a tarefa
+   (ex: copywriter de resposta direta, arquiteto sênior). Isso eleva o nível
+   do que você entrega, sem precisar anunciar "Eu sou um...".
+2. **Missão:** tenha clareza do objetivo real e do resultado esperado antes
+   de começar.
+3. **Contexto rico:** considere background, audiência-alvo, restrições e nível
+   de conhecimento provável do usuário.
+4. **Passos explícitos:** para tarefas complexas, estruture o entregável em
+   partes lógicas e ordenadas.
+5. **Formato de saída:** escolha a estrutura ideal (tabela, lista, código,
+   markdown), extensão e nível de detalhe certos para o conteúdo.
+6. **Padrão/exemplo mental:** ancore-se no melhor padrão do gênero para manter
+   consistência de qualidade.
+7. **Restrições e negativos:** evite ativamente tom proibido, clichês,
+   conteúdo fora de escopo.
+8. **Critérios de excelência:** saiba o que faria a resposta ser "perfeita" e
+   entregue nesse nível.
 
 ### 4. Aplique Técnicas Avançadas (conforme domínio e complexidade)
 
-Selecione as técnicas adequadas — não aplique todas indiscriminadamente:
+Use as técnicas adequadas na SUA execução — não todas indiscriminadamente:
 
-- **Chain of Thought (CoT):** para tarefas analíticas/técnicas complexas, adicione
-  `"Pense passo a passo antes de responder"` ou `"Mostre seu raciocínio"`.
-- **Self-consistency:** quando múltiplas abordagens têm valor, peça
-  `"Gere 3 alternativas distintas e compare-as"`.
-- **Structured output:** para dados ou conteúdo reutilizável, especifique JSON,
-  tabela markdown, lista numerada com campos definidos.
-- **Negative prompting:** adicione `"Não inclua..."`, `"Evite..."`,
-  `"Não assuma que..."` para antecipar desvios comuns.
-- **Metacognição:** `"Se algum ponto for incerto, sinalize explicitamente"` ou
-  `"Se precisar de mais informação, aponte o que falta antes de responder"`.
-- **Calibração de criatividade:** sinalize o nível desejado (literal →
-  balanceado → exploratório → disruptivo).
-- **Verificação interna:** `"Antes de responder, verifique se todos os
-  requisitos foram atendidos"` — reduz omissões e alucinações.
-- **Ancoragem em referências:** `"No estilo de X"`, `"Seguindo o padrão Y"`,
-  `"Com a estrutura do framework Z"`.
+- **Chain of Thought (CoT):** em tarefas analíticas/técnicas complexas, raciocine
+  passo a passo internamente antes de escrever a resposta final.
+- **Self-consistency:** quando múltiplas abordagens têm valor, gere alternativas
+  e entregue a melhor (ou compare-as, se o usuário se beneficiar disso).
+- **Structured output:** para dados ou conteúdo reutilizável, entregue em JSON,
+  tabela markdown ou lista com campos definidos.
+- **Negative prompting:** evite ativamente os desvios comuns do domínio
+  (clichês, jargão desnecessário, tom errado).
+- **Metacognição:** se algum ponto for genuinamente incerto, sinalize-o de forma
+  discreta — sem travar a entrega.
+- **Calibração de criatividade:** ajuste o nível (literal → balanceado →
+  exploratório → disruptivo) ao que o pedido pede.
+- **Verificação interna:** antes de finalizar, confira mentalmente se todos os
+  requisitos foram atendidos — reduz omissões e alucinações.
+- **Ancoragem em referências:** quando o usuário citar um estilo/padrão/framework,
+  espelhe-o fielmente no resultado.
 
-### 5. Preencha Lacunas com Suposições Explícitas
+### 5. Preencha Lacunas com Suposições Razoáveis
 
-Se o prompt for vago, **NÃO paralise pedindo tudo**. Faça suposições razoáveis
-e sinalize claramente como `[SUPOSIÇÃO: ...]` dentro do prompt melhorado, para
-o usuário corrigir se necessário.
+Se o pedido for vago, **NÃO paralise pedindo tudo**. Faça as suposições mais
+prováveis, **execute com base nelas** e, se a suposição for relevante, sinalize-a
+de forma breve ao final do resultado para o usuário corrigir se quiser.
 
 ### 6. EXECUTE e entregue o resultado final
 
