@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Roteiro de conversa 1:1 da JP·sites para venda de sites a psicólogas independentes — mensagens prontas, ramificações e objeções." />
+<title>Roteiro 1:1 — JP·sites (Humanizado)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f6f5f1; --surface:#ffffff; --surface-2:#fbfaf7;
+    --ink:#1b2a2b; --muted:#5b6c6d; --faint:#8a9899;
+    --brand:#2f5d62; --brand-strong:#244a4e; --brand-soft:#e7efee;
+    --accent:#b07d4a; --line:#e4e1d8; --line-strong:#d3cfc4;
+    --ok:#2f6f4f; --danger:#9b3d3d; --danger-soft:#f4e7e6;
+    --warn:#8a6d2f; --warn-soft:#f6efdd;
+    --shadow:0 1px 2px rgba(27,42,43,.04),0 6px 20px rgba(27,42,43,.06);
+    --radius:14px; --radius-sm:10px;
+    --maxw:980px;
+  }
+  [data-theme="dark"]{
+    --bg:#121d1d; --surface:#1a2827; --surface-2:#16221f;
+    --ink:#e9ede9; --muted:#a6b6b3; --faint:#7d8f8c;
+    --brand:#67aaa2; --brand-strong:#7cbcb4; --brand-soft:#1f302e;
+    --accent:#d3a064; --line:#2a3b39; --line-strong:#354946;
+    --ok:#6cc093; --danger:#e08a8a; --danger-soft:#2e2120;
+    --warn:#d6b46a; --warn-soft:#2c2718;
+    --shadow:0 1px 2px rgba(0,0,0,.25),0 8px 24px rgba(0,0,0,.30);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:Lora,Georgia,serif;line-height:1.25;margin:0}
+  a{color:var(--brand);text-underline-offset:2px}
+
+  header.top{
+    position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--surface) 92%,transparent);
+    backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);
+  }
+  .top-inner{max-width:var(--maxw);margin:0 auto;padding:10px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-family:Lora,serif;font-weight:600;font-size:18px;white-space:nowrap}
+  .logo{width:30px;height:30px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:Lora,serif;font-size:15px;font-weight:600}
+  .brand small{font-family:Inter;font-weight:500;color:var(--muted);font-size:12px}
+  .spacer{flex:1 1 auto}
+  .search{position:relative;flex:1 1 260px;min-width:180px;max-width:420px}
+  .search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--faint)}
+  .search input{
+    width:100%;height:44px;padding:0 38px 0 38px;border:1px solid var(--line-strong);border-radius:999px;
+    background:var(--surface);color:var(--ink);font-size:15px;font-family:inherit;
+  }
+  .search input:focus{outline:3px solid var(--brand-soft);border-color:var(--brand)}
+  .search .clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--faint);width:30px;height:30px;border-radius:50%;cursor:pointer;display:none;align-items:center;justify-content:center}
+  .search .clear:hover{background:var(--brand-soft);color:var(--ink)}
+  .iconbtn{
+    height:44px;min-width:44px;padding:0 12px;border:1px solid var(--line-strong);border-radius:999px;
+    background:var(--surface);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    font-family:inherit;font-size:14px;font-weight:500;
+  }
+  .iconbtn:hover{background:var(--surface-2);border-color:var(--brand)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+  .hero{padding:28px 0 8px}
+  .hero h1{font-size:clamp(26px,5vw,38px)}
+  .hero p{color:var(--muted);margin:10px 0 0;max-width:62ch}
+  .rules{
+    margin:20px 0 8px;background:var(--brand-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 18px;
+  }
+  .rules h2{font-size:15px;font-family:Inter;font-weight:600;color:var(--brand-strong);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+  .rules ul{margin:6px 0 0;padding-left:18px;color:var(--ink)}
+  .rules li{margin:3px 0}
+  .rules b{color:var(--brand-strong)}
+
+  nav.toc{position:sticky;top:65px;z-index:30;background:var(--bg);padding:12px 0 8px;margin-top:8px}
+  .toc-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+  .toc-row a{
+    flex:0 0 auto;text-decoration:none;font-size:13px;font-weight:500;color:var(--muted);
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;white-space:nowrap;
+    min-height:38px;display:inline-flex;align-items:center;
+  }
+  .toc-row a:hover{border-color:var(--brand);color:var(--ink)}
+  .toc-row a.active{background:var(--brand);border-color:var(--brand);color:#fff}
+
+  .stage{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin:14px 0;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:120px}
+  .stage-head{
+    width:100%;text-align:left;border:0;background:transparent;cursor:pointer;color:var(--ink);
+    display:flex;align-items:center;gap:14px;padding:18px 18px;font-family:inherit;
+  }
+  .stage-num{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--brand-soft);color:var(--brand-strong);font-weight:600;display:grid;place-items:center;font-size:14px}
+  .stage-head h2{font-size:18px;flex:1 1 auto}
+  .stage-head .chev{flex:0 0 auto;color:var(--faint);transition:transform .2s ease}
+  .stage[open] .stage-head .chev,.stage.open .stage-head .chev{transform:rotate(180deg)}
+  .stage-body{padding:0 18px 18px;border-top:1px solid var(--line)}
+  .stage:not(.open) .stage-body{display:none}
+
+  .lead{color:var(--muted);font-size:14.5px;margin:14px 0}
+  .lead b{color:var(--ink)}
+
+  .msg{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 14px 12px;margin:14px 0;position:relative}
+  .msg .label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .msg .label span{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--brand-strong)}
+  .copyable{white-space:pre-wrap;font-size:15px;line-height:1.65;color:var(--ink)}
+  .copyable strong{color:var(--ink)}
+  .copy{
+    border:1px solid var(--line-strong);background:var(--surface);color:var(--brand-strong);
+    border-radius:999px;height:38px;padding:0 14px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;
+    display:inline-flex;align-items:center;gap:6px;flex:0 0 auto;
+  }
+  .copy:hover{background:var(--brand-soft);border-color:var(--brand)}
+  .copy.copied{background:var(--ok);border-color:var(--ok);color:#fff}
+  .copy svg{width:15px;height:15px}
+
+  .note{font-size:13.5px;color:var(--muted);margin:8px 2px 0;display:flex;gap:8px}
+  .note svg{flex:0 0 auto;color:var(--faint);margin-top:3px}
+  .note b{color:var(--ink)}
+
+  .branch{margin:12px 0 2px;border-left:3px solid var(--line-strong);padding:2px 0 2px 14px}
+  .branch h4{margin:0 0 6px;font-size:12px;font-family:Inter;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--faint)}
+  .branch ul{margin:0;padding-left:16px}
+  .branch li{margin:5px 0;font-size:14.5px;color:var(--ink)}
+  .branch li b{color:var(--brand-strong)}
+
+  .obj{border:1px solid var(--line);border-radius:var(--radius-sm);margin:12px 0;overflow:hidden}
+  .obj-head{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;background:var(--surface-2)}
+  .obj-head .q{flex:1 1 auto}
+  .obj-head .q b{display:block;font-size:15px;color:var(--ink)}
+  .obj-head .q em{font-size:13px;color:var(--muted);font-style:normal}
+  .obj-tag{flex:0 0 auto;width:26px;height:26px;border-radius:7px;background:var(--danger-soft);color:var(--danger);display:grid;place-items:center;font-weight:700;font-size:13px}
+  .obj-body{padding:12px 14px}
+  .arrow{font-size:13.5px;color:var(--brand-strong);margin:8px 2px 0;display:flex;gap:7px;align-items:flex-start}
+  .arrow svg{flex:0 0 auto;margin-top:3px}
+
+  .callout{margin:14px 0;border-radius:var(--radius-sm);padding:12px 14px;font-size:14px;display:flex;gap:10px}
+  .callout.warn{background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 30%,var(--line))}
+  .callout.danger{background:var(--danger-soft);border:1px solid color-mix(in srgb,var(--danger) 30%,var(--line))}
+  .callout svg{flex:0 0 auto;margin-top:2px}
+  .callout.warn svg{color:var(--warn)} .callout.danger svg{color:var(--danger)}
+
+  .plans{display:grid;gap:8px;margin:12px 0}
+  .plan{display:flex;flex-wrap:wrap;gap:4px 10px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;background:var(--surface-2)}
+  .plan b{color:var(--ink)} .plan .price{color:var(--brand-strong);font-weight:600;font-variant-numeric:tabular-nums}
+  .plan small{color:var(--muted);width:100%}
+
+  .flow{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:auto;margin:12px 0}
+  .flow pre{margin:0;padding:16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.5;color:var(--ink)}
+
+  .pill{display:inline-block;font-size:12px;font-weight:600;color:var(--brand-strong);background:var(--brand-soft);border-radius:999px;padding:3px 10px;margin:2px 4px 2px 0;font-variant-numeric:tabular-nums}
+
+  .noresult{display:none;text-align:center;color:var(--muted);padding:40px 16px}
+  .noresult.show{display:block}
+  mark{background:#ffe9a8;color:inherit;border-radius:3px;padding:0 1px}
+  [data-theme="dark"] mark{background:#5c4a1f;color:#fff}
+
+  footer{max-width:var(--maxw);margin:24px auto 60px;padding:18px 16px;color:var(--faint);font-size:13px;border-top:1px solid var(--line);text-align:center}
+
+  @media (max-width:600px){
+    .brand small{display:none}
+    .hero{padding:20px 0 4px}
+    .stage-head{padding:16px 14px}
+    .stage-body{padding:0 14px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="logo">JP</span> <span>JP·sites <small>· roteiro humanizado v2</small></span></div>
+    <div class="spacer"></div>
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="q" type="search" placeholder="Buscar mensagem, objeção, etapa…" aria-label="Buscar no roteiro" autocomplete="off" />
+      <button class="clear" id="clearBtn" aria-label="Limpar busca"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <button class="iconbtn" id="expandBtn" title="Abrir/fechar todas as etapas"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 13 5 5 5-5M7 6l5 5 5-5"/></svg><span>Expandir</span></button>
+    <button class="iconbtn" id="themeBtn" aria-label="Alternar tema claro/escuro" title="Tema claro/escuro"><svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Roteiro de conversa 1:1 <span style="font-size:16px;font-family:Inter;font-weight:500;color:var(--accent);margin-left:8px">versão humanizada</span></h1>
+    <p>Do primeiro "oi" ao Pix da entrada. Psicólogas independentes em <b>[cidade]</b> · canal: DM do Instagram · lead frio. Toque em <b>Copiar</b> em cada bloco e troque os campos entre colchetes.</p>
+  </section>
+
+  <div class="rules">
+    <h2><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg> 4 regras inviáveis de quebrar</h2>
+    <ul>
+      <li><b>Uma pergunta só</b> por mensagem.</li>
+      <li><b>Primeira linha sempre personalizada</b> — prove que olhou o perfil (nada de copiar-colar igual pra todo mundo).</li>
+      <li><b>Zero promessa</b> de pacientes/resultado. Venda clareza, confiança e facilidade de contato. Horário: 8h–19h seg–sex, sáb até 12h.</li>
+      <li><b>Primeira mensagem = curiosidade genuína.</b> Nenhum produto na msg 1. Você vende depois que ela falar — não antes.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Navegação por etapa">
+    <div class="toc-row" id="tocRow"></div>
+  </nav>
+
+  <div id="stages">
+
+    <!-- ESTÁGIO 1 -->
+    <section class="stage open" id="e1" data-title="Primeiro contato (DM fria)">
+      <button class="stage-head" aria-expanded="true"><span class="stage-num">1</span><h2>Primeiro contato (DM fria)</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+
+        <p class="lead"><b>Antes de enviar:</b> abra o perfil dela e identifique a especialidade ou abordagem que aparece na bio (ex: TCC, ansiedade, adolescentes, relacionamentos). Isso vai na primeira linha — sem personalização, não envie.</p>
+
+        <div class="msg">
+          <div class="label"><span>Mensagem 1 — curiosidade genuína (sem produto)</span><button class="copy">Copiar</button></div>
+          <div class="copyable">Oi, [Nome]! Vi que você atende [especialidade/abordagem que aparece no perfil — ex: ansiedade, TCC, adolescentes]. Uma curiosidade: quando alguém nova te encontra pelo Instagram, ela costuma chamar direto na DM ou vai buscar mais informação antes de dar esse passo?</div>
+        </div>
+
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Por que funciona:</b> a pergunta faz ela pensar no próprio funil — você não aponta a dor, ela mesma percebe. Qualquer resposta é abertura para a mensagem 2.</span></p>
+
+        <div class="msg">
+          <div class="label"><span>Mensagem 2 — ponte para a demo (só depois que ela responder)</span><button class="copy">Copiar</button></div>
+          <div class="copyable">Faz sentido. Tenho um modelo de página feito pra esse momento exato — quando a pessoa quer entender o seu jeito de trabalhar antes de te chamar. É bem simples, específico pra psicólogas. Quer dar uma olhada?</div>
+        </div>
+
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Observe:</b> "faz sentido" funciona para qualquer resposta dela — seja "DM direto" ou "vai buscar antes". Adapte mentalmente e siga. Não repita nem justifique.</span></p>
+
+        <div class="branch">
+          <h4>Ramificações</h4>
+          <ul>
+            <li>Qualquer resposta sobre o processo dela → envie a <b>Mensagem 2</b> → <b>Estágio 2</b>.</li>
+            <li>"quanto custa?" antes de ver → responda: <i>"Depende do que você precisa, mas antes — quer ver o modelo? Fica mais fácil de entender o que está dentro."</i> → <b>Estágio 2</b>.</li>
+            <li>"não tenho interesse / já tenho site" → <i>"Imagina, [Nome], obrigado pela atenção! Se um dia quiser organizar isso, é só chamar."</i> (não insista).</li>
+            <li>Sem resposta → <b>Estágio 8 · Follow-ups (sem resposta)</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 2 -->
+    <section class="stage" id="e2" data-title="Demo + qualificação">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">2</span><h2>Entrega da demo + qualificação</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <div class="msg">
+          <div class="label"><span>Bloco para copiar</span><button class="copy">Copiar</button></div>
+          <div class="copyable">Tá aqui: [link da demo]. É um modelo — no seu caso entraria sua foto, seu texto e o seu jeito de explicar o que você faz. Me conta uma coisa pra eu já ir pensando no seu: você atende online, presencial ou os dois?</div>
+        </div>
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Quando usar:</b> assim que ela aceitar ver. <b>Observe:</b> "pra eu já ir pensando no seu" sinaliza personalização — ela percebe que não é script genérico. Se só disse "vou ver", aguarde e use o follow-up de +24h.</span></p>
+        <div class="msg">
+          <div class="label"><span>2ª pergunta (depois que ela responder — uma de cada vez)</span><button class="copy">Copiar</button></div>
+          <div class="copyable">Entendido. E hoje você já tem algum site ou seria do zero?</div>
+        </div>
+        <div class="branch">
+          <h4>Ramificações</h4>
+          <ul>
+            <li>Respondeu as duas → <b>Estágio 3 (Diagnóstico)</b>.</li>
+            <li>"Gostei!" / elogiou a demo → ótimo sinal, siga ao diagnóstico naturalmente.</li>
+            <li>"Já tenho site" → <i>"Show. O que te incomoda no que você tem hoje?"</i> → vira diagnóstico de migração.</li>
+            <li>"Já tenho Instagram, preciso disso?" → <b>Objeção 3</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 3 -->
+    <section class="stage" id="e3" data-title="Diagnóstico">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">3</span><h2>Diagnóstico (uma pergunta por vez)</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <p class="lead">Faça <b>uma pergunta por mensagem</b>, na ordem. Não envie a lista toda. Espere a resposta antes da próxima. O diagnóstico é onde você vira consultor — não vendedor.</p>
+        <div class="msg"><div class="label"><span>3.1 · O que aparece no Google</span><button class="copy">Copiar</button></div><div class="copyable">Hoje, quando alguém pesquisa seu nome no Google, o que costuma aparecer?</div></div>
+        <div class="msg"><div class="label"><span>3.2 · Por onde chegam os contatos</span><button class="copy">Copiar</button></div><div class="copyable">E os seus contatos chegam mais por onde — Instagram, WhatsApp, indicação de alguém?</div></div>
+        <div class="msg"><div class="label"><span>3.3 · O que ela quer comunicar (guarde essa resposta — vira briefing)</span><button class="copy">Copiar</button></div><div class="copyable">O que você gostaria que a pessoa entendesse sobre o seu trabalho antes de te chamar?</div></div>
+        <div class="msg"><div class="label"><span>3.4 · Tem material</span><button class="copy">Copiar</button></div><div class="copyable">Você já tem foto profissional e um texto de apresentação, ou precisaria de ajuda com isso também?</div></div>
+        <div class="msg"><div class="label"><span>3.5 · Temperatura (mede a urgência real)</span><button class="copy">Copiar</button></div><div class="copyable">Se a gente avançasse nisso, tem algum motivo pra ser agora ou tá sem pressa no momento?</div></div>
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Quando usar:</b> sempre antes de qualquer preço cravado. A <b>3.5</b> revela lead quente × morno. As respostas <b>3.3 e 3.4</b> viram o briefing — guarde.</span></p>
+        <div class="branch">
+          <h4>Ramificações por temperatura (3.5)</h4>
+          <ul>
+            <li>"Tô começando / quero atender mais organizado / vou abrir consultório" → <b>quente</b> → Estágio 4 hoje ou em até 24h.</li>
+            <li>"Sem pressa, só pesquisando" → <b>morno</b> → entregue a proposta mesmo assim, sem empurrar; ative follow-up de proposta.</li>
+            <li>Perguntou preço no meio → <b>Objeção 1</b> (dá o norte e volta à pergunta que estava fazendo).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 4 -->
+    <section class="stage" id="e4" data-title="Proposta">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">4</span><h2>Proposta (até 24h após o diagnóstico)</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <p class="lead">Por padrão, recomende <b>Presença Essencial</b> para psicóloga independente. Suba de plano só se o diagnóstico pedir (blog, várias páginas, captação por Google).</p>
+        <div class="msg">
+          <div class="label"><span>Bloco · Essencial (recomendado)</span><button class="copy">Copiar</button></div>
+          <div class="copyable">[Nome], pelo que você me contou, o que resolve é o plano Presença Essencial:
+
+• Página única: apresentação, abordagem, dúvidas frequentes e botão de WhatsApp
+• Texto escrito por mim a partir de um briefing de 15 minutos
+• Versão de celular e publicação inclusas
+• 2 rodadas de revisão
+• Pronta em até 10 dias úteis depois do briefing completo
+• R$ 2.990 de criação + R$ 669/mês (hospedagem, pequenos ajustes e suporte)
+
+O que NÃO está incluso: textos para redes sociais, gestão de anúncios e blog — isso entra nos planos maiores, se um dia fizer sentido.
+
+Pra começar: 50% no Pix (R$ 1.495) pra entrar na fila. O saldo só na sua aprovação, antes de publicar. Domínio e conteúdo ficam no seu nome, e a mensalidade só começa no dia em que o site vai pro ar. O que acha?</div>
+        </div>
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Observe:</b> se ela responder com pergunta operacional ("quanto demora?", "como pago?") → <b>pule para o Estágio 6</b>. Pare de vender.</span></p>
+
+        <p class="lead" style="margin-bottom:6px"><b>Se o diagnóstico pediu mais — referência rápida de planos:</b></p>
+        <div class="plans">
+          <div class="plan"><b>Autoridade Premium</b> <span class="price">R$ 6.990 + R$ 1.529/mês</span> <span class="pill">14 dias úteis</span><small>5 a 7 páginas, Google Meu Negócio e Analytics.</small></div>
+          <div class="plan"><b>Autoridade Elite</b> <span class="price">R$ 10.490 + R$ 2.379/mês</span> <span class="pill">18 dias úteis</span><small>SEO local avançado, 3 landing pages e integrações.</small></div>
+          <div class="plan"><b>Presença Total</b> <span class="price">R$ 15.990 + R$ 3.879/mês</span> <span class="pill">21 dias úteis</span><small>Blog + redes + anúncios.</small></div>
+        </div>
+
+        <div class="msg">
+          <div class="label"><span>Condição beta · só os 3 primeiros (se hesitar ou pedir portfólio)</span><button class="copy">Copiar</button></div>
+          <div class="copyable">Como estou abrindo a operação nesse formato, os 3 primeiros clientes entram na condição de lançamento: R$ 2.490 de criação em vez de R$ 2.990. Em troca, peço duas coisas no final — só se você aprovar o resultado: um depoimento sincero e autorização pra mostrar seu site no meu portfólio. Você ganha no preço, eu ganho a prova. Faz sentido?</div>
+        </div>
+        <div class="callout warn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span><b>Ético:</b> a condição beta é escassez <b>verdadeira</b> (morre no 3º cliente). Não a estique nem use como pressão falsa.</span></div>
+        <div class="branch">
+          <h4>Ramificações</h4>
+          <ul>
+            <li>"Fechado / topo / bora" → <b>Estágio 6</b>.</li>
+            <li>Qualquer objeção → <b>Estágio 5</b> (sempre devolve ao fechamento).</li>
+            <li>Silêncio após a proposta → <b>Estágio 8 · Follow-up de proposta</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 5 -->
+    <section class="stage" id="e5" data-title="Objeções">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">5</span><h2>Banco de objeções → devolve ao fechamento</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">1</span><div class="q"><b>"Quanto custa?" (cedo demais)</b><em>Significa: interesse real, quer filtrar rápido.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">Depende do que você precisa, mas pra te dar um norte: a página única completa sai por R$ 2.990 de criação + R$ 669/mês, pronta em até 10 dias úteis. Antes de cravar o seu, me conta: você atende online, presencial ou os dois?</div></div>
+            <p class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Dá o preço <b>e</b> devolve a pergunta. Volta ao Estágio 2/3.</p>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">2</span><div class="q"><b>"Tá caro / não tenho agora"</b><em>Significa: não viu valor suficiente ou é momento. Descubra qual.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">Entendo. Pra ser transparente sobre o que está dentro: eu escrevo o texto, monto, publico e mantenho no ar — você só responde um briefing de 15 minutos. Se mesmo assim não couber agora, tenho duas saídas: a condição de lançamento (R$ 2.490 pros 3 primeiros, em troca de depoimento no final) ou começar por um diagnóstico pago de R$ 250, que eu abato do projeto se você fechar depois. Qual te atende melhor?</div></div>
+            <p class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>As duas saídas reconduzem ao "qual você prefere" = fechamento.</p>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">3</span><div class="q"><b>"Já tenho Instagram, preciso de site?"</b><em>Significa: não entendeu a diferença entre rede social e ativo próprio.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">E continua tendo! A página não substitui o Instagram, ela organiza. No feed a informação importante se perde; na página, quem pesquisa seu nome vê em 30 segundos o que você faz, como funciona e onde te chamar. E ela é sua — não depende de algoritmo nem de conta bloqueada. O modelo que te mandei mostra isso. Quer que eu pense em como ficaria no seu caso?</div></div>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">4</span><div class="q"><b>"Não quero mensalidade"</b><em>Significa: medo de assinatura eterna.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">Tranquilo, existe o formato sem mensalidade: R$ 4.990, e depois de publicado o site fica 100% por sua conta — hospedagem, ajustes e suporte passam a ser seus. A mensalidade de R$ 669 existe porque alguém precisa manter isso no ar, seguro e atualizado quando você precisar. Qual dos dois formatos prefere?</div></div>
+            <div class="callout danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><span><b>Nunca</b> tire a mensalidade mantendo R$ 2.990. Sem mensalidade = R$ 4.990.</span></div>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">5</span><div class="q"><b>"Tem portfólio? / Você tem clientes?"</b><em>Significa: medo de cair em amador. Honestidade total — mentir aqui destrói tudo.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">Sendo direto: estou começando a operação nesse formato, então o que te mostro é o modelo navegável e o processo passo a passo — sem inventar caso de cliente. Por isso os 3 primeiros entram na condição de lançamento (R$ 2.490), em troca de um depoimento real no final, se você aprovar o resultado. Você ganha no preço, eu ganho a prova. Justo?</div></div>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">6</span><div class="q"><b>"Faço de graça no Wix / com IA"</b><em>Significa: verdade parcial. Não negue, diferencie.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">Dá pra fazer sim, sem ironia. A diferença é tempo e texto: a maioria trava no que escrever, não na ferramenta. Eu resolvo texto, estrutura, versão de celular e publicação em até 10 dias úteis — você só responde o briefing. Se preferir fazer por conta, te desejo sucesso de verdade. Se quiser delegar, é só me dizer.</div></div>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">7</span><div class="q"><b>"Vou pensar / falar com sócio(a)"</b><em>Significa: 80% das vezes é objeção escondida. Descubra antes de soltar.</em></div></div>
+          <div class="obj-body">
+            <div class="msg"><div class="label"><span>Resposta</span><button class="copy">Copiar</button></div><div class="copyable">Claro. Me ajuda só numa coisa, pra eu não te encher à toa depois: o que pesa mais — o valor, o momento, ou ficou alguma dúvida sobre o que está incluso?</div></div>
+            <p class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>A resposta aponta a objeção real → volte ao item certo. Se for terceiro:</p>
+            <div class="msg"><div class="label"><span>Se for decidir com terceiro</span><button class="copy">Copiar</button></div><div class="copyable">Perfeito. Quer que eu mande um resumo de 5 linhas da proposta pra você encaminhar pra ele(a)?</div></div>
+          </div>
+        </div>
+
+        <div class="obj">
+          <div class="obj-head"><span class="obj-tag">8</span><div class="q"><b>"Sumiu"</b><em>Significa: normal — a maioria fecha entre o 2º e o 4º contato.</em></div></div>
+          <div class="obj-body">
+            <p class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Use os follow-ups de proposta (+48h e +5 dias) <b>e pare</b>. Não persiga além disso.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 6 -->
+    <section class="stage" id="e6" data-title="Sinais de compra → fechamento">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">6</span><h2>Sinais de compra → fechamento</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <p class="lead"><b>Gatilhos</b> (se ela perguntar qualquer um, já decidiu — pare de vender):</p>
+        <p><span class="pill">Quanto tempo demora?</span><span class="pill">Como funciona o pagamento?</span><span class="pill">O que você precisa de mim?</span><span class="pill">Dá pra colocar [detalhe]?</span></p>
+        <div class="msg"><div class="label"><span>Bloco para copiar</span><button class="copy">Copiar</button></div><div class="copyable">Então bora. Me confirma seu e-mail que te mando a proposta por escrito pra aceite + a chave Pix da entrada (R$ 1.495). Assim que cair, te envio o briefing (15 min) e o prazo de 10 dias úteis começa a contar.</div></div>
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Observe:</b> não acrescente argumento novo. Se ela perguntou um detalhe ("dá pra colocar agenda?"), responda em uma linha ("Dá sim") <b>e emende o pedido do Pix</b>.</span></p>
+        <div class="branch">
+          <h4>Ramificações</h4>
+          <ul>
+            <li>Mandou o e-mail → envie a proposta (PDF/ZapSign: escopo, prazo, revisões, valores, o que não inclui) + chave Pix. <b>Não comece nada sem aceite registrado + entrada paga.</b></li>
+            <li>"Pago amanhã / semana que vem" → <i>"Combinado! Te deixo a proposta e a chave Pix aqui em cima. A vaga na fila trava quando a entrada cai — qualquer coisa me chama."</i> (sem pressão falsa).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 7 -->
+    <section class="stage" id="e7" data-title="Pós-pagamento">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">7</span><h2>Pós-pagamento</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <div class="msg"><div class="label"><span>Bloco para copiar</span><button class="copy">Copiar</button></div><div class="copyable">Recebido, [Nome]! Obrigado pela confiança. Aqui está o briefing: [link do formulário]. São uns 15 minutos. Quanto antes você responder, mais cedo seu site fica pronto — o prazo de 10 dias úteis começa a contar quando o briefing chegar completo. Qualquer dúvida nas perguntas, é só me chamar.</div></div>
+        <p class="note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Quando usar:</b> assim que o Pix cair e o aceite estiver registrado. Se demorar no briefing, lembre uma vez (gentil) em +3 dias — o prazo só corre com o briefing completo.</span></p>
+        <div class="callout warn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>Em psicologia, lembre-a no briefing de informar o <b>CRP</b> para exibição na página (exigência ética de comunicação da profissão).</span></div>
+      </div>
+    </section>
+
+    <!-- ESTÁGIO 8 -->
+    <section class="stage" id="e8" data-title="Follow-ups">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num">8</span><h2>Follow-ups</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <p class="lead"><b>Sem resposta à Mensagem 1</b></p>
+        <div class="msg"><div class="label"><span>+24h · entrega a demo mesmo assim</span><button class="copy">Copiar</button></div><div class="copyable">[Nome], vou deixar o modelo aqui pra quando der tempo: [link da demo]. Qualquer coisa é só responder por aqui.</div></div>
+        <div class="msg"><div class="label"><span>+3 dias · pergunta de decisão</span><button class="copy">Copiar</button></div><div class="copyable">[Nome], faz sentido pra você ter uma página assim nesse momento? Se sim, te explico em 3 linhas como funciona. Se não for a hora, me fala que não te incomodo mais.</div></div>
+        <div class="msg"><div class="label"><span>+7 dias · encerramento educado (pare aqui)</span><button class="copy">Copiar</button></div><div class="copyable">[Nome], vou encerrar por aqui pra não lotar sua caixa. Se mais pra frente quiser organizar sua presença online, é só chamar. Abraço!</div></div>
+        <p class="lead"><b>Proposta enviada, sem retorno</b></p>
+        <div class="msg"><div class="label"><span>+48h</span><button class="copy">Copiar</button></div><div class="copyable">[Nome], conseguiu olhar a proposta? Se algo não encaixou — valor, prazo ou escopo — me fala que eu vejo o que dá pra ajustar, ou te digo com honestidade se não for pra mim agora.</div></div>
+        <div class="msg"><div class="label"><span>+5 dias · encerramento da proposta (pare aqui)</span><button class="copy">Copiar</button></div><div class="copyable">[Nome], vou fechar o assunto por aqui pra te dar paz. A proposta vale por 15 dias. Se quiser retomar dentro desse prazo, é só me chamar.</div></div>
+        <div class="callout warn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span><b>Regra:</b> após o +5 dias / +7 dias, <b>pare</b>. Quem persegue além disso queima a marca.</span></div>
+      </div>
+    </section>
+
+    <!-- FLUXOGRAMA -->
+    <section class="stage" id="fluxo" data-title="Fluxograma">
+      <button class="stage-head" aria-expanded="false"><span class="stage-num"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span><h2>Fluxograma (1 tela)</h2><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="stage-body">
+        <div class="flow"><pre>MSG 1 — curiosidade genuína (sem produto)
+   "Quando alguém nova te encontra pelo Instagram, ela chama direto ou busca mais info antes?"
+   │ qualquer resposta ──► MSG 2 (ponte) → DEMO + qualificação (online/presencial? site/do zero?)
+   │ "quanto custa?" ──────► "Antes — quer ver o modelo? Fica mais fácil entender o que está dentro." → Demo
+   │ sem resposta ─────────► FOLLOW-UP: +24h demo / +3d decisão / +7d encerra
+        │
+        ▼
+DIAGNÓSTICO (1 pergunta/vez: Google → contatos → mensagem → material → PRESSA)
+        │ quente ──► PROPOSTA (≤24h)        morno ──► PROPOSTA + follow-up de proposta
+        ▼
+PROPOSTA: Essencial R$2.990 + R$669/mês · 10 dias · 2 revisões · entrada R$1.495
+        │ + o que NÃO inclui · beta R$2.490 (3 primeiros) se hesitar/pedir portfólio
+        │
+        ├── OBJEÇÃO ─► [1 preço cedo ·2 caro→beta/diag R$250 ·3 já tenho IG ·4 sem mensal→R$4.990
+        │              ·5 portfólio→honestidade+beta ·6 Wix/IA→diferencia ·7 vou pensar→qual pesa?
+        │              ·8 sumiu→follow-up] ──► sempre DEVOLVE ao fechamento
+        │
+        ▼
+SINAL DE COMPRA ("quanto demora / como pago / o que precisa / dá pra colocar X")
+   ► PARA DE VENDER ► pede E-MAIL + PIX entrada (R$1.495) + aceite registrado
+        │ pago + aceite
+        ▼
+PÓS-PAGAMENTO: confirma ► envia BRIEFING (15 min) ► prazo começa (CRP na página)</pre></div>
+        <div class="callout danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg><span><b>Inviolável:</b> zero promessa de pacientes/resultado · nenhuma prova fictícia (só a demo marcada como "modelo") · sem superlativo/urgência falsa · nada começa sem entrada paga + aceite · nenhum desconto sem contrapartida.</span></div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="noresult" id="noResult">
+    <p>Nenhum trecho encontrado para essa busca.</p>
+  </div>
+</main>
+
+<footer>JP·sites · roteiro humanizado v2 — preços canônicos conforme <code>contrato_jpsites.txt</code>. Use offline; nada é enviado para fora.</footer>
+
+<script>
+(function(){
+  var stages = Array.prototype.slice.call(document.querySelectorAll('.stage'));
+  var toc = document.getElementById('tocRow');
+
+  stages.forEach(function(s,i){
+    var a=document.createElement('a');
+    a.href='#'+s.id;
+    a.textContent=(s.querySelector('.stage-num').textContent.trim().match(/^\d+$/)? (i+1)+'. ':'')+s.dataset.title;
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      openStage(s,true);
+      var y=s.getBoundingClientRect().top+window.pageYOffset-110;
+      window.scrollTo({top:y});
+    });
+    toc.appendChild(a);
+  });
+  var tocLinks=Array.prototype.slice.call(toc.children);
+
+  function openStage(s,open){
+    s.classList.toggle('open', open);
+    s.querySelector('.stage-head').setAttribute('aria-expanded', open?'true':'false');
+  }
+
+  stages.forEach(function(s){
+    s.querySelector('.stage-head').addEventListener('click',function(){
+      openStage(s, !s.classList.contains('open'));
+    });
+  });
+
+  var expandBtn=document.getElementById('expandBtn');
+  expandBtn.addEventListener('click',function(){
+    var anyClosed=stages.some(function(s){return !s.classList.contains('open');});
+    stages.forEach(function(s){openStage(s,anyClosed);});
+    expandBtn.querySelector('span').textContent=anyClosed?'Recolher':'Expandir';
+  });
+
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.copy');
+    if(!btn) return;
+    var card=btn.closest('.msg');
+    var text=card.querySelector('.copyable').innerText.trim();
+    var done=function(){
+      btn.textContent='Copiado ✓'; btn.classList.add('copied');
+      setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('copied');},1500);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){fallback(text);done();});
+    } else {fallback(text);done();}
+  });
+  function fallback(text){
+    var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);
+  }
+
+  var spy=function(){
+    var pos=window.pageYOffset+150,cur=null;
+    stages.forEach(function(s){ if(s.offsetTop<=pos) cur=s.id; });
+    tocLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+cur); });
+  };
+  window.addEventListener('scroll',spy,{passive:true}); spy();
+
+  var q=document.getElementById('q'),clearBtn=document.getElementById('clearBtn'),noRes=document.getElementById('noResult');
+  function clearMarks(root){
+    root.querySelectorAll('mark').forEach(function(m){var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize();});
+  }
+  function mark(root,term){
+    var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null);
+    var nodes=[],n;while(n=walker.nextNode())nodes.push(n);
+    var re=new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+    nodes.forEach(function(node){
+      if(node.parentNode.closest('script,style,.copy,button')) return;
+      if(re.test(node.nodeValue)){
+        var span=document.createElement('span');
+        span.innerHTML=node.nodeValue.replace(re,'<mark>$1</mark>');
+        node.parentNode.replaceChild(span,node);
+      }
+    });
+  }
+  var t;
+  q.addEventListener('input',function(){
+    clearTimeout(t); t=setTimeout(run,120);
+    clearBtn.style.display=q.value?'flex':'none';
+  });
+  clearBtn.addEventListener('click',function(){q.value='';clearBtn.style.display='none';run();q.focus();});
+  function run(){
+    var term=q.value.trim().toLowerCase();
+    stages.forEach(function(s){clearMarks(s);});
+    if(!term){
+      stages.forEach(function(s){s.style.display='';});
+      noRes.classList.remove('show');
+      return;
+    }
+    var hits=0;
+    stages.forEach(function(s){
+      var has=s.textContent.toLowerCase().indexOf(term)>-1;
+      s.style.display=has?'':'none';
+      if(has){openStage(s,true);mark(s,term);hits++;}
+    });
+    noRes.classList.toggle('show',hits===0);
+  }
+
+  var themeBtn=document.getElementById('themeBtn'),root=document.documentElement;
+  var saved=localStorage.getItem('jp-theme');
+  if(saved){root.setAttribute('data-theme',saved);}
+  else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){root.setAttribute('data-theme','dark');}
+  themeBtn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);localStorage.setItem('jp-theme',next);
+  });
+})();
+</script>
+</body>
+</html>
